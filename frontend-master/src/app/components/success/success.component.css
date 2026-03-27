@@ -1,0 +1,14 @@
+.success-page {
+  max-width: 920px;
+}
+
+.success-card {
+  max-width: 620px;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.09);
+}
+
+.success-icon {
+  font-size: 2rem;
+}

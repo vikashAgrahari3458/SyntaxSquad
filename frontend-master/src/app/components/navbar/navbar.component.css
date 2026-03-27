@@ -1,0 +1,192 @@
+/* Navbar Container */
+.navbar-shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 12px 12px;
+}
+
+/* Logo/Brand Styling */
+.navbar-brand-custom {
+  font-size: 1.5rem;
+  color: #dc3545 !important;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.navbar-brand-custom:hover {
+  color: #c82333 !important;
+  transform: scale(1.05);
+}
+
+.pizza-emoji {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-right: 0.5rem;
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Navigation Links */
+.nav-links-center {
+  gap: 0.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #495057 !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 6px;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.08);
+}
+
+.nav-link.active {
+  color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.12);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 1.2rem;
+  right: 1.2rem;
+  height: 3px;
+  background: linear-gradient(90deg, #dc3545 0%, #ff6b6b 100%);
+  border-radius: 2px;
+}
+
+/* Cart Icon */
+.cart-icon-container {
+  font-size: 1.3rem;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.cart-icon-container:hover {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.08);
+  transform: translateY(-2px);
+}
+
+.cart-icon-container:active {
+  transform: translateY(0);
+}
+
+.cart-badge {
+  top: -8px;
+  right: -8px;
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(220, 53, 69, 0); }
+}
+
+/* Auth Button */
+.auth-btn {
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.3s ease;
+  border-width: 2px;
+  white-space: nowrap;
+}
+
+.auth-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+/* Navigation Actions Container */
+.nav-actions {
+  min-width: max-content;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.5rem 0 !important;
+  }
+
+  .nav-link {
+    padding: 0.75rem 0 !important;
+    border-radius: 0;
+    margin: 0.25rem 0;
+  }
+
+  .nav-link.active::after {
+    left: 0;
+    right: auto;
+    bottom: -15px;
+    width: 3px;
+    height: auto;
+  }
+
+  .nav-links-center {
+    gap: 0;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+  }
+
+  .navbar-brand-custom {
+    font-size: 1.3rem;
+  }
+
+  .pizza-emoji {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ultra-small devices */
+@media (max-width: 576px) {
+  .navbar-brand-custom {
+    font-size: 1.1rem;
+  }
+
+  .pizza-emoji {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+  }
+
+  .auth-btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .cart-icon-container {
+    font-size: 1.1rem;
+  }
+}
