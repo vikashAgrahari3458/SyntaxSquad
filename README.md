@@ -1,5 +1,12 @@
 # SyntaxSquad - Retail Ordering System
 
+# Team Members:
+- **Vikash Agrahari A2305222453**
+- **Khushi Jain A023167022042**
+- **Akshit Arora A023167022053**
+- **Harshit Juneja A41105222053**
+
+
 ## Overview
 
 This is a full-stack retail ordering application built with ASP.NET Core backend and Angular frontend. The system allows users to browse products, manage shopping carts, and place orders through a modern web interface.
@@ -147,9 +154,11 @@ frontend-master (2)/
 
 ## ER Diagram
 
-*Insert ER Diagram here*
 
-![ER Diagram](er-diagram.png)
+
+![ER Diagram]
+<img width="895" height="598" alt="image" src="https://github.com/user-attachments/assets/75d0963e-7805-4457-a3c9-1946c9e59ddb" />
+
 
 ### Entities and Relationships
 
@@ -176,7 +185,8 @@ frontend-master (2)/
 
 *Insert Workflow Diagram here*
 
-![Application Workflow](workflow-diagram.png)
+<img width="1091" height="662" alt="image" src="https://github.com/user-attachments/assets/a7bbee2f-da8d-4698-af21-0b61dbe0d38b" />
+
 
 ### High-Level Flow
 1. **User Registration/Login** → JWT Token Generation
