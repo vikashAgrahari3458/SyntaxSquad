@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-shadow">
+  <div class="container-fluid px-4">
+
+    <!-- Logo/Brand -->
+    <a class="navbar-brand navbar-brand-custom fw-bold" routerLink="/menu" title="Go to Home">
+      <span class="pizza-emoji">🍕</span> LINKIT
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">a</span>
+    </button>
+
+    <!-- Navigation Content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+      <!-- Center Navigation Links -->
+      <ul class="navbar-nav mx-auto nav-links-center">
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/menu" 
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }"
+             title="View Menu">
+            <i class="bi bi-house-door me-1"></i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/cart"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }"
+             title="View Shopping Cart">
+            <i class="bi bi-bag me-1"></i>Cart
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             routerLink="/orders"
+             routerLinkActive="active"
+             title="View Your Orders">
+            <i class="bi bi-clipboard-check me-1"></i>Orders
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right Side: Cart Icon & Auth -->
+      <div class="d-flex align-items-center gap-3 nav-actions">
+
+        <!-- Cart Icon with Badge -->
+        <div class="cart-icon-container position-relative" 
+             (click)="goToCart()" 
+             title="View Cart ({{ cartCount }} items)"
+             role="button" 
+             tabindex="0">
+          <i class="bi bi-cart3 fs-5"></i>
+          <span class="cart-badge position-absolute badge rounded-pill bg-danger" 
+                *ngIf="cartCount > 0">
+            {{ cartCount > 99 ? '99+' : cartCount }}
+          </span>
+        </div>
+
+        <!-- Auth Button -->
+        <button class="btn btn-outline-danger btn-sm auth-btn" 
+                (click)="toggleLogin()"
+                [attr.aria-label]="isLoggedIn ? 'Logout' : 'Login'">
+          <i class="bi me-1" [ngClass]="isLoggedIn ? 'bi-box-arrow-right' : 'bi-box-arrow-in'"></i>
+          {{ isLoggedIn ? 'Logout' : 'Login' }}
+        </button>
+
+      </div>
+    </div>
+  </div>
+</nav>

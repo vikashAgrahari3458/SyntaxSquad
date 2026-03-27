@@ -1,0 +1,41 @@
+.checkout-page {
+	max-width: 1140px;
+}
+
+.checkout-card,
+.summary-card {
+	border: 0;
+	border-radius: 14px;
+	box-shadow: 0 8px 22px rgba(21, 24, 31, 0.08);
+}
+
+.checkout-card {
+	margin-top: 4px;
+}
+
+.summary-card {
+	margin-left: 2px;
+}
+
+.coupon-block {
+	background: #fafbfc;
+	border: 1px solid #eef1f4;
+	border-radius: 12px;
+}
+
+.discount-row {
+	color: #198754;
+	font-weight: 600;
+}
+
+.total-row {
+	border-top: 1px dashed #dbe1e8;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+	.summary-card {
+		margin-left: 0;
+	}
+}

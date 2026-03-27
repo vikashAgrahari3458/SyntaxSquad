@@ -1,0 +1,121 @@
+.menu-page {
+	max-width: 1180px;
+}
+
+.menu-header {
+	padding-left: 2px;
+}
+
+.menu-header h2 {
+	font-weight: 800;
+	color: #b9381f;
+	letter-spacing: 0.1px;
+}
+
+.menu-controls {
+	border-radius: 16px;
+	box-shadow: 0 8px 24px rgba(30, 10, 5, 0.08);
+	background: linear-gradient(180deg, #fff9f6 0%, #ffffff 100%);
+}
+
+.category-group .btn {
+	min-width: 84px;
+}
+
+.search-wrap {
+	width: 290px;
+}
+
+.search-input {
+	padding-left: 2.1rem;
+	border-radius: 10px;
+}
+
+.search-icon {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #8d8d8d;
+}
+
+.cart-pill {
+	border-radius: 10px;
+	white-space: nowrap;
+}
+
+.menu-card {
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 10px 24px rgba(17, 24, 39, 0.09);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 14px 30px rgba(17, 24, 39, 0.14);
+}
+
+.offset-card {
+	margin-top: 8px;
+}
+
+.image-wrap img {
+	height: 195px;
+	object-fit: cover;
+}
+
+.tag-strip {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.menu-tag {
+	border-radius: 999px;
+	font-size: 0.72rem;
+	font-weight: 700;
+	padding: 5px 9px;
+}
+
+.veg-tag {
+	background: #e7f8ec;
+	color: #1f7a3f;
+}
+
+.bestseller-tag {
+	background: #fff1e8;
+	color: #b45309;
+}
+
+.card-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+}
+
+.price {
+	font-weight: 800;
+	color: #c2410c;
+}
+
+.meta-line {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #5f6470;
+	font-size: 0.9rem;
+}
+
+.dot {
+	color: #a5aab3;
+}
+
+@media (max-width: 991.98px) {
+	.offset-card {
+		margin-top: 0;
+	}
+
+	.search-wrap {
+		width: 100%;
+	}
+}

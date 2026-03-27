@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+<div class="container checkout-page py-4 py-md-5">
+	<div class="row g-4 align-items-start">
+		<div class="col-lg-7">
+			<div class="card checkout-card p-4 p-md-4">
+				<h3 class="mb-2">Checkout</h3>
+				<p class="text-muted mb-4">Almost there. Add address and confirm your order.</p>
+
+				<div class="mb-4">
+					<label for="address" class="form-label fw-semibold">Delivery Address</label>
+					<textarea
+						id="address"
+						class="form-control"
+						rows="4"
+						placeholder="Flat/House No., Street, Landmark"
+						[(ngModel)]="deliveryAddress"
+					></textarea>
+				</div>
+
+				<div class="coupon-block p-3 p-md-4">
+					<label for="coupon" class="form-label fw-semibold mb-2">Coupon</label>
+					<div class="d-flex flex-column flex-sm-row gap-2">
+						<input
+							id="coupon"
+							type="text"
+							class="form-control"
+							placeholder="Enter coupon code (e.g., SAVE20)"
+							[(ngModel)]="couponCode"
+						/>
+						<button class="btn btn-dark px-4" type="button" (click)="applyCoupon()">Apply</button>
+					</div>
+
+					<div
+						*ngIf="couponMessage"
+						class="mt-3 small"
+						[ngClass]="couponMessageType === 'success' ? 'text-success' : 'text-danger'"
+					>
+						{{ couponMessage }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-5">
+			<div class="card summary-card p-4">
+				<h4 class="mb-3">Order Summary</h4>
+
+				<div *ngIf="!hasItems" class="text-muted mb-2">
+					No items added yet.
+				</div>
+
+				<div *ngIf="hasItems">
+					<div *ngFor="let item of cartItems" class="d-flex justify-content-between mb-2">
+						<span>{{ item.name }} x{{ item.quantity }}</span>
+						<span>₹{{ item.price * item.quantity }}</span>
+					</div>
+				</div>
+
+				<hr class="my-3" />
+
+				<div *ngIf="hasItems; else emptyTotals">
+					<div class="d-flex justify-content-between mb-2">
+						<span>Subtotal</span>
+						<span>₹{{ subtotal }}</span>
+					</div>
+					<div class="d-flex justify-content-between mb-2 discount-row">
+						<span>Discount</span>
+						<span>-₹{{ discount }}</span>
+					</div>
+					<div class="d-flex justify-content-between total-row mt-3 pt-2">
+						<span>Final Payable</span>
+						<span>₹{{ finalAmount }}</span>
+					</div>
+				</div>
+
+				<ng-template #emptyTotals>
+					<div class="text-muted small">Totals will appear once you add pizzas to cart.</div>
+				</ng-template>
+
+				<button class="btn btn-danger w-100 mt-4 py-2" type="button" (click)="placeOrder()">
+					Place Order
+				</button>
+
+				<p *ngIf="orderPlacedMessage" class="small mt-3 mb-0 text-success">
+					{{ orderPlacedMessage }}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

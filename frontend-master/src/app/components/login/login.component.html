@@ -1,0 +1,46 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="row w-100">
+    <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center bg-primary text-white">
+      <div class="text-center">
+        <h1 class="display-4">Welcome Back!</h1>
+        <p class="lead">Sign in to access your account and explore our amazing products.</p>
+        <img src="https://via.placeholder.com/400x300?text=Landing+Image" alt="Landing Image" class="img-fluid rounded">
+      </div>
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="card shadow-lg p-4 w-100" style="max-width: 400px;">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Login</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+              <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+                Please enter a valid email.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+              <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                Password must be at least 6 characters.
+              </div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" formControlName="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Sign In</button>
+          </form>
+          <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="text-center">
+            <p>Don't have an account? <a href="/register" class="text-decoration-none">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
